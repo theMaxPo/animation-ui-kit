@@ -1,0 +1,19 @@
+$color-primary: #6c63ff;
+$color-secondary: #ff6584;
+$color-dark: #1a1a2e;
+$color-light: #f8f9fa;
+$color-text: #333333;
+
+$font-primary: 'Inter', system-ui, sans-serif;
+$font-size-base: 16px;
+
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1200px;
+
+:root {
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-dark: #{$color-dark};
+    --transition-base: 0.3s ease;
+}
