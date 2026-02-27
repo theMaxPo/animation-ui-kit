@@ -1,0 +1,98 @@
+@use '../abstracts/variables' as *;
+
+.modal {
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+
+            .modal__content {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__content {
+        background: var(--color-background);
+        color: var(--color-foreground);
+        padding: $sp-10;
+        border-radius: $radius-lg;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: $shadow-lg;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        transform: scale(0.95);
+        opacity: 0;
+
+        &--slide-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: $radius-lg 0 0 $radius-lg;
+            max-width: 400px;
+            transform: translateX(100%);
+        }
+
+        &--slide-bottom {
+            position: absolute;
+            bottom: 0;
+            border-radius: $radius-lg $radius-lg 0 0;
+            max-width: 600px;
+            transform: translateY(100%);
+        }
+
+        &--slide-top {
+            position: absolute;
+            top: 0;
+            border-radius: 0 0 $radius-lg $radius-lg;
+            max-width: 600px;
+            transform: translateY(-100%);
+        }
+    }
+
+    &__title {
+        font-size: $text-2xl;
+        font-weight: 600;
+        margin-bottom: $sp-2;
+    }
+
+    &__desc {
+        color: var(--color-muted-foreground);
+        font-size: $text-sm;
+        margin-bottom: $sp-6;
+    }
+
+    &__close {
+        position: absolute;
+        top: $sp-4;
+        right: $sp-4;
+        background: transparent;
+        border: none;
+        color: var(--color-muted-foreground);
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--color-foreground);
+        }
+    }
+}

@@ -1,0 +1,161 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+    outline: none;
+    width: max-content;
+    border: 1px solid transparent;
+    transition: all 0.15s ease-in-out;
+
+    font-size: $text-sm;
+    font-weight: 500;
+
+    height: 2.25rem;
+    padding: 0 0.625rem;
+
+    gap: $sp-2;
+
+    border-radius: $radius-sm;
+    background-clip: padding-box;
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
+        border-color: var(--color-muted-foreground);
+    }
+
+    &--lg {
+        height: 2.5rem;
+        padding: 0 0.625rem;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--default {
+        background-color: var(--color-primary);
+        color: var(--color-background);
+
+        &:hover {
+            transform: translateY(0);
+            box-shadow: none;
+            opacity: 0.8;
+        }
+    }
+
+    &--primary {
+        background-color: var(--color-primary);
+        color: var(--color-background);
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &--secondary {
+        background: var(--color-secondary);
+        color: var(--color-background);
+        border-color: var(--color-secondary);
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        box-shadow: $shadow-md;
+
+        &:hover {
+            color: var(--color-background);
+            background-color: var(--color-primary);
+        }
+    }
+
+    &--ghost {
+        background-color: transparent;
+        color: var(--color-primary);
+        border: 0;
+
+        &:hover {
+            background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+            color: var(--color-primary);
+        }
+    }
+
+    &--loading {
+        cursor: wait;
+        pointer-events: none;
+    }
+
+    &__spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid color-mix(in srgb, var(--color-background) 30%, transparent);
+        border-top-color: var(--color-background);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    &--glow {
+        background: var(--color-primary-foreground);
+        color: rgba(75, 66, 233, 0.5);
+        border-radius: 999px;
+        padding-inline: $sp-4;
+        animation: glowPulse 2s ease infinite;
+    }
+
+    &--icon svg {
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    &--icon:hover svg {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 8px rgba(75, 66, 233, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(67, 60, 203, 0.9);
+    }
+}

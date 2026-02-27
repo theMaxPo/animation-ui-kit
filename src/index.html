@@ -1,26 +1,680 @@
+<!doctype html>
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Animation UI Kit</title>
     </head>
 
     <body>
-        <header class="header" role="banner">
-            <nav class="header__nav" aria-label="Основная навигация">
-                <a href="#" class="header__logo">Logo</a>
-            </nav>
+        <header class="header">
+            <div class="container">
+                <nav class="header__nav" aria-label="Навигация">
+                    <div class="header__logo">
+                        <svg
+                            class="header__logo-img"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-badge-check-icon lucide-badge-check"
+                        >
+                            <path
+                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+                            />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        <span class="header__logo-text">Примеры</span>
+                    </div>
+
+                    <ul class="header__menu">
+                        <li class="header__menu-item">
+                            <a href="#buttons" class="header__link">
+                                <span class="header__link-main">Кнопки</span>
+                                <span class="header__link-hover">Кнопки</span>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#cards" class="header__link">
+                                <span class="header__link-main">Карточки</span>
+                                <span class="header__link-hover">Карточки</span>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#modal" class="header__link">
+                                <span class="header__link-main">Модалки</span>
+                                <span class="header__link-hover">Модалки</span>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#skeleton" class="header__link">
+                                <span class="header__link-main">Скелетон</span>
+                                <span class="header__link-hover">Скелетон</span>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#animations" class="header__link">
+                                <span class="header__link-main">Анимации</span>
+                                <span class="header__link-hover">Анимации</span>
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#contact" class="header__link">
+                                <span class="header__link-main">Форма</span>
+                                <span class="header__link-hover">Форма</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <button
+                        class="header__theme-toggle"
+                        id="themeToggle"
+                        aria-label="Переключить тему"
+                    >
+                        <svg
+                            class="icon-sun"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+
+                        <svg
+                            class="icon-moon"
+                            aria-hidden="true"
+                            style="display: none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+                            />
+                        </svg>
+                    </button>
+
+                    <button
+                        class="header__burger"
+                        id="burger"
+                        aria-label="Открыть меню"
+                        aria-expanded="false"
+                    ></button>
+
+                    <ul class="header__menu-mobile" id="menu">
+                        <li><a href="#buttons">Кнопки</a></li>
+                        <li><a href="#cards">Карточки</a></li>
+                        <li><a href="#modal">Модалки</a></li>
+                        <li><a href="#skeleton">Скелетон</a></li>
+                        <li><a href="#animations">Анимации</a></li>
+                        <li><a href="#contact">Форма</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <main id="main-content">
-            <section class="hero" aria-labelledby="hero-title">
-                <h1 class="hero__title" id="hero-title">Animation UI Kit</h1>
-                <p class="hero__subtitle">Текст</p>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__btns">
+                        <button class="btn btn--primary" id="resetCanvas">Очистить</button>
+                        <button class="btn btn--primary" id="stopCanvas">Старт</button>
+                    </div>
+                    <canvas class="hero__canvas" id="canvas" aria-hidden="true"></canvas>
+                    <div class="hero__header">
+                        <h1 class="hero__title">
+                            Привет, я <span class="hero__title-accent">Frontend-разработчик</span>
+                        </h1>
+                        <p class="hero__subtitle">
+                            Этот проект - демо моих навыков: анимации, компоненты, интерактив.<br />
+                            Всё написано на чистом <strong>HTML5 + SCSS + TypeScript</strong>,
+                            собрано через <strong>Webpack</strong>.
+                        </p>
+                        <a href="#tech" class="btn btn--primary btn--lg">Смотреть компоненты</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="tech">
+                <div class="container">
+                    <h2 class="section__title">Технологии</h2>
+                    <p class="section__desc">Данный сайт написан и использует следующий стек:</p>
+                    <div class="carousel">
+                        <div class="carousel__track">
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://sass-lang.com/assets/img/styleguide/seal-color.png"
+                                    alt="SASS"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://webpack.js.org/icon-pwa-512x512.934507c816afbcdb.png"
+                                    alt="Webpack"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjagLxKY2wC40V3678Vp4e566DU7f0PNeBNg&s"
+                                    alt="TypeScript"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://cdn.iconscout.com/icon/free/png-256/free-html-logo-icon-svg-download-png-3030115.png"
+                                    alt="HTML"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/250px-PostCSS_Logo.svg.png"
+                                    alt="PostCSS"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://cdn-icons-png.flaticon.com/256/25/25231.png"
+                                    alt="GitHub"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/960px-Npm-logo.svg.png"
+                                    alt="npm"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/960px-Unofficial_JavaScript_logo_2.svg.png"
+                                    alt="JS"
+                            /></a>
+                            <!-- КОПИЯ -->
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://sass-lang.com/assets/img/styleguide/seal-color.png"
+                                    alt="SASS"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://webpack.js.org/icon-pwa-512x512.934507c816afbcdb.png"
+                                    alt="Webpack"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjagLxKY2wC40V3678Vp4e566DU7f0PNeBNg&s"
+                                    alt="TypeScript"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://cdn.iconscout.com/icon/free/png-256/free-html-logo-icon-svg-download-png-3030115.png"
+                                    alt="HTML"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PostCSS_Logo.svg/250px-PostCSS_Logo.svg.png"
+                                    alt="PostCSS"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://cdn-icons-png.flaticon.com/256/25/25231.png"
+                                    alt="GitHub"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/960px-Npm-logo.svg.png"
+                                    alt="npm"
+                            /></a>
+                            <a href="#" class="carousel__slide"
+                                ><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/960px-Unofficial_JavaScript_logo_2.svg.png"
+                                    alt="JS"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="buttons">
+                <div class="container">
+                    <h2 class="section__title">Кнопки</h2>
+                    <p class="section__desc">
+                        Базовые элементы взаимодействия. Поддерживают различные состояния и
+                        вариации.
+                    </p>
+                    <div class="showcase-grid">
+                        <button class="btn btn--primary">Главная</button>
+                        <button class="btn btn--secondary">Акцентная</button>
+                        <button class="btn btn--outline">Обводка</button>
+                        <button class="btn btn--ghost">Прозрачная</button>
+                        <button
+                            class="btn btn--primary"
+                            type="button"
+                            disabled
+                            aria-disabled="true"
+                        >
+                            Отключена
+                        </button>
+                        <button
+                            class="btn btn--primary btn--loading"
+                            type="button"
+                            aria-busy="true"
+                            aria-label="Загрузка"
+                        >
+                            <span class="btn__spinner" aria-hidden="true"></span>
+                            Загрузка...
+                        </button>
+                        <button class="btn btn--primary btn--icon" aria-label="Нравится">
+                            <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                                />
+                            </svg>
+                            Лайк
+                        </button>
+                        <button class="btn btn--glow">Свечение</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="cards">
+                <div class="container">
+                    <h2 class="section__title">Карточки</h2>
+                    <p class="section__desc">
+                        Контейнеры для контента со встроенными hover-эффектами и 3D-трансформациями.
+                    </p>
+
+                    <div class="card-grid">
+                        <article class="card card--default">
+                            <div class="card__content">
+                                <h3 class="card__title">Простая</h3>
+                                <p class="card__text">Тень + scale</p>
+                            </div>
+                        </article>
+
+                        <article class="card card--3d" id="3dCard">
+                            <div class="card__content">
+                                <h3 class="card__title">3D</h3>
+                                <p class="card__text">Следит за мышкой</p>
+                            </div>
+                        </article>
+
+                        <div class="card__container-flip">
+                            <article class="card card--flip">
+                                <div class="card__side card__front">
+                                    <h3 class="card__title">Поворотная</h3>
+                                    <p class="card__text">Наведи на меня</p>
+                                </div>
+                                <div class="card__side card__back">
+                                    <h3 class="card__title">другой текст</h3>
+                                    <p class="card__text">Обратная сторона</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="modal">
+                <div class="container">
+                    <h2 class="section__title">Модальное окно</h2>
+                    <p class="section__desc">
+                        Всплывающие диалоговые окна для вывода важной информации или действий.
+                    </p>
+                    <div class="showcase-grid">
+                        <button class="btn btn--primary" data-modal-target="modalOverlay">
+                            Стандартная
+                        </button>
+                        <button class="btn btn--primary" data-modal-target="modalRight">
+                            Справа
+                        </button>
+                        <button class="btn btn--primary" data-modal-target="modalBottom">
+                            Снизу
+                        </button>
+                        <button class="btn btn--primary" data-modal-target="modalTop">
+                            Сверху
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="toasts">
+                <div class="container">
+                    <h2 class="section__title">Toast-уведомления</h2>
+                    <p class="section__desc">Слайд + fade анимация, авто-закрытие</p>
+                    <div class="showcase-grid">
+                        <button class="btn btn--primary" id="successToast">
+                            Уведомление о завершении
+                        </button>
+                        <button class="btn btn--outline" id="errorToast">
+                            Уведомление об ошибке
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="skeleton">
+                <div class="container">
+                    <h2 class="section__title">Skeleton</h2>
+                    <p class="section__desc">
+                        Заглушки для отображения состояния загрузки контента.
+                    </p>
+                    <div class="showcase-grid">
+                        <div class="card">
+                            <div class="skeleton skeleton--image"></div>
+                            <div class="skeleton__body">
+                                <div class="skeleton skeleton--title"></div>
+                                <div class="skeleton skeleton--text"></div>
+                                <div class="skeleton skeleton--text skeleton--text-short"></div>
+                                <div class="skeleton skeleton--btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="animations" aria-labelledby="anim-title">
+                <div class="container">
+                    <h2 class="section__title" id="anim-title">Анимации</h2>
+                    <p class="section__desc">
+                        Примеры интерактивных анимаций и микровзаимодействий, включая SVG.
+                    </p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <h3 class="anim__title">Анимированный счётчик</h3>
+                            <div class="counter">
+                                <span id="counter" class="counter__number" data-target="120"
+                                    >0</span
+                                >
+                                <button id="resetCounter" class="btn btn--primary">Старт</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="anim-card__title">SVG анимация</h3>
+                            <svg
+                                id="mySvg"
+                                class="svg-draw"
+                                viewBox="0 0 200 120"
+                                width="200"
+                                height="120"
+                                aria-label="Анимированный SVG-рисунок"
+                                role="img"
+                            >
+                                <polyline
+                                    class="svg-draw__line"
+                                    points="10,100 50,40 90,80 130,20 170,60 190,30"
+                                    fill="none"
+                                    stroke="var(--color-primary)"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <circle
+                                    class="svg-draw__dot"
+                                    cx="190"
+                                    cy="30"
+                                    r="5"
+                                    fill="var(--color-secondary)"
+                                />
+                            </svg>
+                            <button id="resetSvg" class="btn btn--primary">Старт</button>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="anim-card__title">Лоадер</h3>
+                            <div class="progress-container">
+                                <div id="progressBar" class="progress-bar initial-state"></div>
+                            </div>
+                            <button id="resetProgress" class="btn btn--primary">Старт</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact">
+                <div class="container">
+                    <h2 class="section__title">Тестовая форма</h2>
+                    <p class="section__desc">
+                        Пример формы с настраиваемой валидацией и обработкой состояний.
+                    </p>
+
+                    <form action="#" method="POST" class="contact__form" id="myForm">
+                        <div class="contact__field">
+                            <label class="contact__label" for="firstname">
+                                Имя
+                                <span class="contact__required" aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="contact__input"
+                                id="firstname"
+                                name="firstname"
+                                type="text"
+                                required
+                                placeholder="Иван"
+                            />
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="lastname">
+                                Фамилия
+                                <span class="contact__required" aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="contact__input"
+                                id="lastname"
+                                name="lastname"
+                                type="text"
+                                required
+                                placeholder="Иванов"
+                            />
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="email">
+                                Почта
+                                <span class="contact__required" aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="contact__input"
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                placeholder="example@mail.ru"
+                            />
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="phone">
+                                Номер телефона
+                                <span class="contact__required" aria-hidden="true">*</span>
+                            </label>
+                            <input
+                                class="contact__input"
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                pattern="[+\d\s()-]*"
+                                required
+                                placeholder="+7 (999) 000-0000"
+                            />
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__field">
+                            <label class="contact__label" for="message">
+                                Сообщение
+                                <span class="contact__required" aria-hidden="true">*</span>
+                            </label>
+                            <textarea
+                                class="contact__textarea"
+                                id="message"
+                                name="message"
+                                required
+                                placeholder="Это тестовая форма..."
+                            ></textarea>
+                            <span class="contact__error" aria-live="polite"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn--default btn--lg btn--full">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
             </section>
         </main>
 
-        <footer class="footer" role="contentinfo">
-            <p>&copy; 2026 test</p>
+        <div
+            class="toast-container"
+            id="toast-container"
+            role="region"
+            aria-label="Уведомления"
+            aria-live="polite"
+        ></div>
+
+        <div class="modal__overlay" id="modalOverlay">
+            <div class="modal__content">
+                <h2 class="modal__title">Стандартная</h2>
+                <p class="modal__desc">Полезный текст.</p>
+                <button class="btn btn--primary modal-close">Отлично</button>
+                <button class="modal__close modal-close" aria-label="Закрыть окно">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal__overlay" id="modalRight">
+            <div class="modal__content modal__content--slide-right">
+                <h2 class="modal__title">Справа</h2>
+                <p class="modal__desc">Полезный текст.</p>
+                <button class="btn btn--primary modal-close">Отлично</button>
+                <button class="modal__close modal-close" aria-label="Закрыть окно">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal__overlay" id="modalBottom">
+            <div class="modal__content modal__content--slide-bottom">
+                <h2 class="modal__title">Снизу</h2>
+                <p class="modal__desc">Полезный текст.</p>
+                <button class="btn btn--primary modal-close">Отлично</button>
+                <button class="modal__close modal-close" aria-label="Закрыть окно">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal__overlay" id="modalTop">
+            <div class="modal__content modal__content--slide-top">
+                <h2 class="modal__title">Сверху</h2>
+                <p class="modal__desc">Полезный текст.</p>
+                <button class="btn btn--primary modal-close">Отлично</button>
+                <button class="modal__close modal-close" aria-label="Закрыть окно">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__inner container">
+                <p class="footer__copy">&copy; Copyright 2026. All rights Reserved.</p>
+                <div class="footer__credits">
+                    <span class="footer__author"
+                        >Made by
+                        <a
+                            href="https://github.com/theMaxPo/animation-ui-kit"
+                            class="footer__link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >theMaxPo
+                        </a>
+                    </span>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

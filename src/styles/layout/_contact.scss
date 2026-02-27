@@ -1,0 +1,103 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact {
+    &__form {
+        margin-inline: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        max-width: 32rem;
+        gap: $sp-1;
+        width: 100%;
+    }
+
+    &__error {
+        color: var(--color-destructive);
+        font-size: $text-xs;
+        min-height: 1.25rem;
+    }
+
+    &__field {
+        display: grid;
+        width: 100%;
+        align-items: center;
+        gap: $sp-2;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: $sp-1;
+
+        font-size: $text-sm;
+        font-weight: 500;
+
+        line-height: 1.25rem;
+        white-space: nowrap;
+    }
+
+    &__required {
+        color: var(--color-destructive);
+    }
+
+    &__input {
+        width: 100%;
+        padding: $sp-1 10px;
+        font-size: $text-sm;
+        height: 36px;
+
+        background-color: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: $radius-md;
+
+        outline: none;
+        transition: all 0.2s ease;
+
+        &:focus-visible {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ring) 40%, transparent);
+            border-color: var(--color-ring);
+            opacity: 0.5;
+        }
+
+        &.is-invalid {
+            border-color: var(--color-destructive);
+
+            &:focus-visible {
+                box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-destructive) 40%, transparent);
+            }
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: 4rem;
+        padding: 0.5rem 0.625rem;
+
+        background-color: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: $radius-md;
+
+        font-size: $text-sm;
+        line-height: 1.25rem;
+
+        outline: none;
+        transition: all 0.2s ease;
+        resize: vertical;
+
+        &:focus-visible {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ring) 40%, transparent);
+            border-color: var(--color-ring);
+            opacity: 0.5;
+        }
+
+        &.is-invalid {
+            border-color: var(--color-destructive);
+
+            &:focus-visible {
+                box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-destructive) 40%, transparent);
+            }
+        }
+    }
+}

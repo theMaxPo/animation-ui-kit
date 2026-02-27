@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-background);
+    padding: $sp-4 0;
+    margin: $sp-20 0;
+    display: flex;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 9;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-background) 0%, transparent 100%);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-background) 0%, transparent 100%);
+    }
+
+    &__track {
+        display: flex;
+        width: max-content;
+
+        animation: scroll-infinite 20s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+    &__slide {
+        width: 64px;
+        height: 64px;
+        margin: 0 24px;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

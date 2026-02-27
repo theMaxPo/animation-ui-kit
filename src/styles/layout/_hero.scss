@@ -1,0 +1,94 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+
+    &__canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+
+        .hero:hover & {
+            pointer-events: auto;
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        bottom: $sp-4;
+        left: $sp-4;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $sp-4;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        max-width: 42rem;
+
+        text-align: center;
+        font-size: $text-4xl;
+        line-height: 2.5rem;
+        font-weight: 700;
+    }
+
+    &__title-accent {
+        // color: var(--color-secondary);
+
+        background: linear-gradient(90deg, #dd298f, #aa31ec, #4b26e3, #dd298f);
+        background-size: 200% 100%;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        color: transparent;
+
+        animation: gradient-move 5s linear infinite;
+    }
+
+    &__subtitle {
+        margin-top: 1rem;
+        max-width: 36rem;
+        text-align: center;
+        font-size: $text-base;
+        line-height: 1.75rem;
+        color: var(--color-muted-foreground);
+    }
+
+    &__svg {
+        animation: hero-rotate 20s linear infinite;
+    }
+}
+
+@keyframes hero-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}

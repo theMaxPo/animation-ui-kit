@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 *,
 *::before,
 *::after {
@@ -8,14 +10,14 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
 }
 
 body {
     font-family: $font-primary;
-    color: $color-text;
-    background-color: $color-light;
-    line-height: 1.6;
+    font-size: $text-base;
+    line-height: $line-height-base;
+    color: var(--color-primary);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -30,11 +32,27 @@ a {
     color: inherit;
 }
 
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-primary);
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
