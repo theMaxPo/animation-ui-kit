@@ -26,7 +26,7 @@ export const initForm = (): void => {
         return isValid
     }
 
-    const inputs = form.querySelectorAll('input, document, textarea')
+    const inputs = form.querySelectorAll('input, textarea')
     inputs.forEach((input) => {
         input.addEventListener('input', () =>
             validateField(input as HTMLInputElement | HTMLTextAreaElement)
