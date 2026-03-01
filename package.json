@@ -38,5 +38,8 @@
         "webpack-cli": "^6.0.1",
         "webpack-dev-server": "^5.2.3",
         "webpack-merge": "^6.0.1"
+    },
+    "dependencies": {
+        "@lottiefiles/dotlottie-web": "^0.65.0"
     }
 }

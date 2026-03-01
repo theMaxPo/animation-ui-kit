@@ -9,6 +9,7 @@ import { initForm } from './modules/form'
 import { initBurger } from './modules/burger'
 import { initCanvas } from './modules/canvas'
 import { initTheme } from './modules/theme'
+import { initLottie } from './modules/lottie'
 
 console.log('JS - Init')
 
@@ -23,4 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initBurger()
     initCanvas()
     initTheme()
+    initLottie()
 })
